@@ -1,0 +1,114 @@
+/* initial set up */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, p, ul, figure, blockquote {
+    margin: 0;
+}
+
+ul[role="list"], ol[role="list"] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+.close {
+    display: none;
+}
+
+.noScroll {
+    overflow: hidden;
+    @include breakpoint-up(tablet) {
+        overflow: scroll;
+    }
+}
+
+a, button{
+    cursor: pointer;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    font-family: $fontFamily;
+    font-size: $fontBodyMobile;
+    @include breakpoint-up(tablet) {
+        font-size: $fontBody;
+    }
+    color: $grayishBlue;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+    color: $darkBlue;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 38px;
+    @include breakpoint-up(tablet) {
+        font-size: 50px;
+    }
+}
+
+h2 {
+    font-size: 28px;
+    @include breakpoint-up(tablet) {
+        font-size: 38px;
+    }
+}
+
+.container {
+    @include breakpoint-up(tablet) {
+        max-width: 1075px;
+        margin: auto;
+    }
+}
+
+@include breakpoint-down(tablet) {
+    .wrapper {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    z-index: 1;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient($darkBlue, transparent);
+    @include breakpoint-up(tablet) {
+        display: none;
+    }
+}
+
+button {
+    height: 44px;
+    width: 160px;
+    border: none;
+    border-radius: 22px;
+    background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+    font-size: 14px;
+    color: $white;
+    transition: 0.3s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}

@@ -1,0 +1,71 @@
+.features {
+    background-color: $lightGrayishBlue;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;    
+    @include breakpoint-up (tablet) {
+        text-align: left;
+        padding-top: 95px;
+        padding-bottom: 90px;
+    }
+
+    .container {
+        
+        .heading {
+            margin-bottom: 55px;
+            @include breakpoint-up(tablet) {
+                max-width: 650px;
+                margin-bottom: 70px;
+            }
+            h2 {
+                margin-bottom: 16px;
+                @include breakpoint-up (tablet) {
+                    margin-bottom: 24px;
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .main-content {
+            @include breakpoint-up(tablet) {
+                display: flex;
+                justify-content: center;
+            }
+
+            img {
+                display: inline;
+                padding-bottom: 22px;
+                @include breakpoint-up(tablet) {
+                    padding-bottom: 32px;
+                }
+            }
+
+            h3 {
+                font-size: 18px;
+                padding-bottom: 18px;
+                @include breakpoint-up(tablet) {
+                    font-size: 22px;
+                    padding-bottom: 24px;
+                }
+            }
+
+            p {
+                @include breakpoint-up (tablet){
+                    font-size: 15px;
+                }
+            }
+
+            div:not(:last-of-type) {
+                @include breakpoint-down(tablet) {
+                    margin-bottom: 32px;
+                }
+
+                @include breakpoint-up(tablet) {
+                    margin-right: 22px;
+                }
+            }
+        }
+    }
+}

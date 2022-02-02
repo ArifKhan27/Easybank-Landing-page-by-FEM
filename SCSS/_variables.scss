@@ -1,0 +1,28 @@
+$darkBlue: hsl(233, 26%, 24%);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightgGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+$fontFamily: 'Public Sans', sans-serif;
+$fontBody: 18px;
+$fontBodyMobile: 14px;
+
+// Mixins
+$breakpoints-up: ("mobile": "30em", "tablet": "50em", "desktop": "64em");
+
+$breakpoints-down: ("mobile": "29.9375em", "tablet": "49.9375em", "desktop":"63.9375em");
+
+@mixin breakpoint-up($size) {
+    @media screen and (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size) {
+    @media screen and (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
