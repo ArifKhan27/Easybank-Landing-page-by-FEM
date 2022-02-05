@@ -1,80 +1,153 @@
 .footer {
     background-color: $darkBlue;
-    text-align: center;
-    padding: 40px 0;
 
-    .logo {
-        margin-bottom: 28px;
-    }
+    .container {
 
-    .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-
-        a {
-            
-            
-            svg path {
-            transition: fill .3s;
+        text-align: center;
+        padding: 40px 0;
+    
+        @include breakpoint-up (tablet) {
+            display: grid;
+            // grid-template-columns: repeat(5, 1fr);
+            grid-template-areas: 
+            "One Two Three Four Five"
+            "one Two Three Four five"
+            ;
+        }
+    
+        .logo {
+            @include breakpoint-down(tablet) {
+                margin-bottom: 28px;                
+            }
+            @include breakpoint-up(tablet) {
+                grid-area: One;
+                justify-self: start;
             }
 
-            &:hover {                
+            img {
+                @include breakpoint-down (tablet) {
+                    margin: auto;
+                }
+            }
+
+        }
+    
+        .social-links {
+                display: flex;
+                gap: 12px;
+                justify-content: center;
+                @include breakpoint-up(tablet) {
+                    grid-area: one;
+                    justify-content: start;
+                    align-self: end;
+                }
+    
+            a {                
                 svg path {
-                    fill: $limeGreen;
+                transition: fill .3s;
                 }
-            } 
+    
+                &:hover {                
+                    svg path {
+                        fill: $limeGreen;
+                    }
+                } 
+            }
+    
+            
         }
+    
+        .links-1 {
+            @include breakpoint-down (tablet) {
+                margin-top: 28px;
+            }
 
-        
-    }
-
-    .links {
-        margin: 28px 0 18px;
-        span a {
-            color: $white;
-            display: block;
-            width: max-content;
-            margin: auto;
-            text-decoration: none;
-            transition: .3s;
-            padding-bottom: 12px;
-
-            &:hover {
-                color: $limeGreen;
+            @include breakpoint-up (tablet) {
+                grid-area: Two;
+                justify-content: start;
             }
         }
-    }
+    
+        .links-2 {
+            @include breakpoint-down (tablet){
+                margin-bottom: 14px;
+            }
 
-    .button {
-        margin-bottom: 26px;
-
-        button {
-            position: relative;
-            &::before {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-color: #fff;
-                left: 0px;
-                top: 0px;
-                border-radius: 22px;
+            @include breakpoint-up(tablet) {                
+                grid-area: Three;
+                // justify-content: start;
+                text-align: left;
+            }
+        }
+    
+        .links-1, .links-2 {
+            @include breakpoint-up (tablet) {
+                text-align: left;
+                font-size: 14px;
+            }
+            a {
+                color: $white;
+                display: block;
+                text-decoration: none;
+                width: max-content;
                 transition: .3s;
-                opacity: 0;
-            }
+                @include breakpoint-down (tablet) {
+                    margin: auto;
+                    padding-bottom: 12px;
+                }
 
-            &:hover {
-                opacity: 1;
-                &::before {
-                    opacity: .3;
+                @include breakpoint-up(tablet) {
+                    padding-bottom: 10px;
+                }
+    
+                &:hover {
+                    color: $limeGreen;
                 }
             }
-
         }
-    }
-
-    .copyrights {
-
+    
+    
+        .button {
+            @include breakpoint-down (tablet) {              
+                margin-bottom: 26px;
+            }
+            @include breakpoint-up (tablet) {                
+                grid-area: Five;
+                justify-self: end;
+            }
+    
+            button {
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                    left: 0px;
+                    top: 0px;
+                    border-radius: 22px;
+                    transition: .3s;
+                    opacity: 0;
+                }
+    
+                &:hover {
+                    opacity: 1;
+                    &::before {
+                        opacity: .4;
+                    }
+                }
+    
+            }
+        }
+    
+        .copyright {
+            @include breakpoint-up (tablet) {                
+                grid-area: five;
+                justify-self: end;
+                align-self: end;
+                font-size: 14px;
+            }
+        }
     }
 }

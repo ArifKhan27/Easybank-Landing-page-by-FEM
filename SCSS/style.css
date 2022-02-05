@@ -541,63 +541,154 @@ header .mobile-menu a {
 
 .footer {
   background-color: #2d314d;
+}
+
+.footer .container {
   text-align: center;
   padding: 40px 0;
 }
 
-.footer .logo {
-  margin-bottom: 28px;
+@media screen and (min-width: 50em) {
+  .footer .container {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "One Two Three Four Five" "one Two Three Four five";
+  }
 }
 
-.footer .social-links {
+@media screen and (max-width: 49.9375em) {
+  .footer .container .logo {
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .footer .container .logo {
+    grid-area: One;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+}
+
+@media screen and (max-width: 49.9375em) {
+  .footer .container .logo img {
+    margin: auto;
+  }
+}
+
+.footer .container .social-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1rem;
+  gap: 12px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.footer .social-links a svg path {
+@media screen and (min-width: 50em) {
+  .footer .container .social-links {
+    grid-area: one;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+  }
+}
+
+.footer .container .social-links a svg path {
   -webkit-transition: fill .3s;
   transition: fill .3s;
 }
 
-.footer .social-links a:hover svg path {
+.footer .container .social-links a:hover svg path {
   fill: #31d35c;
 }
 
-.footer .links {
-  margin: 28px 0 18px;
+@media screen and (max-width: 49.9375em) {
+  .footer .container .links-1 {
+    margin-top: 28px;
+  }
 }
 
-.footer .links span a {
+@media screen and (min-width: 50em) {
+  .footer .container .links-1 {
+    grid-area: Two;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
+
+@media screen and (max-width: 49.9375em) {
+  .footer .container .links-2 {
+    margin-bottom: 14px;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .footer .container .links-2 {
+    grid-area: Three;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .footer .container .links-1, .footer .container .links-2 {
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+.footer .container .links-1 a, .footer .container .links-2 a {
   color: white;
   display: block;
+  text-decoration: none;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  margin: auto;
-  text-decoration: none;
   -webkit-transition: .3s;
   transition: .3s;
-  padding-bottom: 12px;
 }
 
-.footer .links span a:hover {
+@media screen and (max-width: 49.9375em) {
+  .footer .container .links-1 a, .footer .container .links-2 a {
+    margin: auto;
+    padding-bottom: 12px;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .footer .container .links-1 a, .footer .container .links-2 a {
+    padding-bottom: 10px;
+  }
+}
+
+.footer .container .links-1 a:hover, .footer .container .links-2 a:hover {
   color: #31d35c;
 }
 
-.footer .button {
-  margin-bottom: 26px;
+@media screen and (max-width: 49.9375em) {
+  .footer .container .button {
+    margin-bottom: 26px;
+  }
 }
 
-.footer .button button {
+@media screen and (min-width: 50em) {
+  .footer .container .button {
+    grid-area: Five;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+}
+
+.footer .container .button button {
   position: relative;
 }
 
-.footer .button button::before {
+.footer .container .button button::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -611,11 +702,23 @@ header .mobile-menu a {
   opacity: 0;
 }
 
-.footer .button button:hover {
+.footer .container .button button:hover {
   opacity: 1;
 }
 
-.footer .button button:hover::before {
-  opacity: .3;
+.footer .container .button button:hover::before {
+  opacity: .4;
+}
+
+@media screen and (min-width: 50em) {
+  .footer .container .copyright {
+    grid-area: five;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+    font-size: 14px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
