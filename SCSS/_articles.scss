@@ -3,12 +3,16 @@
 
     .container {
         padding-top: 82px;
-        padding-bottom: 75px;
+        padding-bottom: 82px;
     }
 
     h2 {
         text-align: center;
         padding-bottom: 28px;
+        @include breakpoint-up (tablet) {
+            text-align: left;
+            padding-bottom: 42px;
+        }
     }
 
     .contents {
