@@ -1,0 +1,80 @@
+.footer {
+    background-color: $darkBlue;
+    text-align: center;
+    padding: 40px 0;
+
+    .logo {
+        margin-bottom: 28px;
+    }
+
+    .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+
+        a {
+            
+            
+            svg path {
+            transition: fill .3s;
+            }
+
+            &:hover {                
+                svg path {
+                    fill: $limeGreen;
+                }
+            } 
+        }
+
+        
+    }
+
+    .links {
+        margin: 28px 0 18px;
+        span a {
+            color: $white;
+            display: block;
+            width: max-content;
+            margin: auto;
+            text-decoration: none;
+            transition: .3s;
+            padding-bottom: 12px;
+
+            &:hover {
+                color: $limeGreen;
+            }
+        }
+    }
+
+    .button {
+        margin-bottom: 26px;
+
+        button {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                left: 0px;
+                top: 0px;
+                border-radius: 22px;
+                transition: .3s;
+                opacity: 0;
+            }
+
+            &:hover {
+                opacity: 1;
+                &::before {
+                    opacity: .3;
+                }
+            }
+
+        }
+    }
+
+    .copyrights {
+
+    }
+}
