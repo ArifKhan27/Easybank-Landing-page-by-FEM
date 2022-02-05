@@ -4,7 +4,7 @@
     .container {
 
         text-align: center;
-        padding: 40px 0;
+        padding: 42px 0;
     
         @include breakpoint-up (tablet) {
             display: grid;

@@ -81,7 +81,7 @@ h2 {
 
 @media screen and (min-width: 50em) {
   h2 {
-    font-size: 38px;
+    font-size: 40px;
   }
 }
 
@@ -354,7 +354,7 @@ header .mobile-menu a {
   .features {
     text-align: left;
     padding-top: 110px;
-    padding-bottom: 95px;
+    padding-bottom: 110px;
   }
 }
 
@@ -515,7 +515,7 @@ header .mobile-menu a {
 
 @media screen and (min-width: 50em) {
   .articles .contents .article-item a .text {
-    padding: 22px;
+    padding: 16px;
   }
 }
 
@@ -541,7 +541,7 @@ header .mobile-menu a {
 }
 
 .articles .contents .article-item a .text p {
-  font-size: 12px;
+  font-size: 13px;
   color: #9698a6;
   line-height: 1.35;
 }
@@ -552,7 +552,7 @@ header .mobile-menu a {
 
 .footer .container {
   text-align: center;
-  padding: 40px 0;
+  padding: 42px 0;
 }
 
 @media screen and (min-width: 50em) {

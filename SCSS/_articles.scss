@@ -60,7 +60,7 @@
                     padding: 34px;
 
                     @include breakpoint-up(tablet) {
-                        padding: 22px;
+                        padding: 16px;
                     }
 
                     h5 {
@@ -83,7 +83,7 @@
                     }
 
                     p {
-                        font-size: 12px;
+                        font-size: 13px;
                         color: $grayishBlue;
                         line-height: 1.35;
                     }
