@@ -1,67 +1,70 @@
-.navigation {
-    padding-block: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header {
+    .navigation {
+        padding: 21px 0 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include breakpoint-down(desktop) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        .header-menu{
+            ul {
+                list-style-type: none;
+                display: flex;
+                padding-left: 20px;
+                :not(:last-child) {
+                    margin-right: 30px;
+                }
 
-    .header-menu{
-        ul {
-            list-style-type: none;
-            display: flex;
-            padding-left: 0;
-            :not(:last-child) {
-                margin-right: 30px;
-            }
-
-            li {
-                font-size: 14px;
-                position: relative;                
-                a {
-                    color: $grayishBlue;
-                    text-decoration: none;
-                    transition: .3s ease-in-out;
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 100%;
-                        height: 4px;
-                        bottom: -130%;
-                        background-image: linear-gradient(to right, $limeGreen, $brightCyan);
-                        opacity: 0;
-                        transition: opacity .3s ease-in-out;
-                    }
-
-                    &:hover {
-                        color: $darkBlue;
+                li {
+                    font-size: 14px;
+                    position: relative;                
+                    a {
+                        color: $grayishBlue;
+                        text-decoration: none;
+                        transition: .3s ease-in-out;
                         &::before {
-                            opacity: 1;
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 4px;
+                            bottom: -130%;
+                            background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+                            opacity: 0;
+                            transition: opacity .3s ease-in-out;
+                        }
+
+                        &:hover {
+                            color: $darkBlue;
+                            &::before {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
             }
+
+            @include breakpoint-down(tablet) {
+                display: none;
+            }
         }
 
-        @include breakpoint-down(tablet) {
-            display: none;
+        .button {
+            @include breakpoint-down(tablet){
+                display: none;
+            }
+        }
+
+        .hamburger {
+            @include breakpoint-up(tablet) {
+                display: none;
+            }
         }
     }
 
-    .button {
-        @include breakpoint-down(tablet){
-            display: none;
-        }
-    }
 
-    .hamburger {
-        @include breakpoint-up(tablet) {
-            display: none;
-        }
-    }
-}
-
-header {
-position: relative;
-
+    position: relative;
     .mobile-menu {
         position: fixed;
         top: 80px;

@@ -2,8 +2,8 @@
     background-color: $veryLightgGray;
 
     .container {
-        padding-top: 82px;
-        padding-bottom: 82px;
+        padding-top: 85px;
+        padding-bottom: 65px;
     }
 
     h2 {
@@ -11,7 +11,7 @@
         padding-bottom: 28px;
         @include breakpoint-up (tablet) {
             text-align: left;
-            padding-bottom: 42px;
+            padding-bottom: 52px;
         }
     }
 
@@ -39,7 +39,7 @@
             }            
 
             @include breakpoint-up(tablet) {
-                width: 245px;
+                width: 260px;
             }
 
             
@@ -60,7 +60,7 @@
                     padding: 34px;
 
                     @include breakpoint-up(tablet) {
-                        padding: 16px;
+                        padding: 30px;
                     }
 
                     h3 {
@@ -83,7 +83,7 @@
                     }
 
                     p {
-                        font-size: 13px;
+                        font-size: 12px;
                         color: $grayishBlue;
                         line-height: 1.35;
                     }
